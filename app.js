@@ -290,31 +290,33 @@ cron.schedule('*/1 * * * *', fetchAndStoreEmtiaGoldSilverPrices);
 
 // ------------------------------ API Endpoints ------------------------------
 
-app.get('/load-share-data', async (req, res) => {
-    await loadShareDataToDB();
-    res.status(200).send('Share data loading started');
-});
+// *****----------------- those are for manual data loading -----------------*****
 
-app.get('/load-currency-data', async (req, res) => {
-    await loadCurrencyDataToDB();
-    res.status(200).send('Currency data loading started');
-});
-app.get('/update-crypto', async (req, res) => {
-    try {
-        await fetchAndUpdateCryptoCurrencyData();
-        res.status(200).send('Crypto data updated and saved to DB');
-    } catch (error) {
-        res.status(500).send('Error updating crypto data');
-    }
-});
+// app.get('/load-share-data', async (req, res) => {
+//     await loadShareDataToDB();
+//     res.status(200).send('Share data loading started');
+// });
 
-app.get('/currency-data', getCurrencyData);
+// app.get('/load-currency-data', async (req, res) => {
+//     await loadCurrencyDataToDB();
+//     res.status(200).send('Currency data loading started');
+// });
+// app.get('/update-crypto', async (req, res) => {
+//     try {
+//         await fetchAndUpdateCryptoCurrencyData();
+//         res.status(200).send('Crypto data updated and saved to DB');
+//     } catch (error) {
+//         res.status(500).send('Error updating crypto data');
+//     }
+// });
 
-app.get('/share-data', retrieveSharesData); 
+app.get('/parabirimi', getCurrencyData);
 
-app.get('/get-crypto', getCryptoCurrencyData);
+app.get('/hissesenedi', retrieveSharesData); 
 
-app.get('/get-emtia', getEmtiaData);
+app.get('/kripto', getCryptoCurrencyData);
+
+app.get('/emtia', getEmtiaData);
 
 const port = 5000;
 
