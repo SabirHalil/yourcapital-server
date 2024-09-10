@@ -2,27 +2,27 @@ const mongoose = require('mongoose');
 
 const modelSchema = new mongoose.Schema(
     {
-        category: {
+        Category: {
             type: String,
             required: true
         },
-        name: {
+        Name: {
             type: String,
             required: true
         },
-        description: {
+        Description: {
             type: String,
             required: true
         },
-        buyPrice: {
+        BuyPrice: {
             type: Number,
             required: true
         },
-        sellPrice: {
+        SellPrice: {
             type: Number,
             required: true
         },
-        spread: {
+        Spread: {
             type: Number,
             required: true
         }
